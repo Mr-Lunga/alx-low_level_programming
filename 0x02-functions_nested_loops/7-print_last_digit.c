@@ -1,18 +1,20 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_last_digi - function prototype
- * @n: The number to check
- * Description: Prints the last digit of a number
- * Return: The last digit of the number
+ * print_last_digi - prints the last digit of a number
+ * @n: n is an integer
+ * Description: prints the last digit of a number
+ * Return: integer
  */
 int print_last_digit(int n)
 {
-	n %= 10;
+	int last = n % 10;
 
-	if (n > 0)
-		n = -n;
-	_putchar(n + '0');
+	if (n < 0)
+		last = -last * -1;
 
-	return (n);
+	_putchar(last + '0');
+
+	return (last);
 }
